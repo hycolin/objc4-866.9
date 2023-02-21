@@ -483,12 +483,11 @@ ustrdupMaybeNil(const uint8_t *str)
 // This version order matches OBJC_AVAILABLE.
 //
 // NOTE: prefer dyld_program_sdk_at_least when possible
-#define sdkIsAtLeast(x, i, t, w, b)                                    \
+#define sdkIsAtLeast(x, i, t, w)                                    \
     (dyld_program_sdk_at_least(dyld_platform_version_macOS_ ## x)   || \
      dyld_program_sdk_at_least(dyld_platform_version_iOS_ ## i)     || \
      dyld_program_sdk_at_least(dyld_platform_version_tvOS_ ## t)    || \
-     dyld_program_sdk_at_least(dyld_platform_version_watchOS_ ## w) || \
-     dyld_program_sdk_at_least(dyld_platform_version_bridgeOS_ ## b))
+     dyld_program_sdk_at_least(dyld_platform_version_watchOS_ ## w))
 
 
 // If we don't have asprintf(), use our own implementation instead
